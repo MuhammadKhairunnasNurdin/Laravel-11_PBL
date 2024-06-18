@@ -11,7 +11,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        /**
+         * Ide Helper package just used when development
+         */
+        if (env('APP_ENV') === 'local') {
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+        }
     }
 
     /**
