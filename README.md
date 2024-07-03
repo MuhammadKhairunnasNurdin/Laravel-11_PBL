@@ -2,7 +2,7 @@
 
 ---
 
-<img src="https://github.com/MuhammadKhairunnasNurdin/Laravel-PBL_Pro-Max/blob/master/public/img/logo_posyandu.png?raw=true" alt="Preview Image" width="500" height="350" style="display: block; margin: 0 auto;">
+<img src="https://github.com/MuhammadKhairunnasNurdin/Laravel-11_PBL/blob/master/public/img/logo_posyandu.png?raw=true" alt="Preview Image" width="500" height="350" style="display: block; margin: 0 auto;">
 
 > The web-based Posyandu application is an application to learn more about the activities, benefits, and purposes as well as the importance of posyandu for citizens also provide many feature related employees posyandu to managing health and other checkup for citizens
 
@@ -10,22 +10,21 @@
 
 ---
 
-- **[Backend Laravel _11.11.*_](https://laravel.com/docs/11.x)**
-- **[Frontend Laravel Blade](https://laravel.com/docs/11.x/blade#main-content) and [Frontend Tailwind](https://tailwindcss.com/docs/installation)**
-- **[Database Mysql _8.0._](https://dev.mysql.com/doc/refman/8.0/en/)**
-- **(OPTIONAL)[Containerization DOCKER](https://docs.docker.com/desktop/)**
+- **[Backend]: [Laravel _11.13.*_](https://laravel.com/docs/11.x)**
+- **[Frontend]: [Laravel Blade](https://laravel.com/docs/11.x/blade#main-content), [Tailwind](https://tailwindcss.com/docs/installation) and [Flowbite](https://flowbite.com/docs/getting-started/laravel/)**
+- **[Database]: [Mysql _8.0._](https://dev.mysql.com/doc/refman/8.0/en/)**
+- **(OPTIONAL)->[Containerization]: [DOCKER](https://docs.docker.com/desktop/)**
 
 
 ### **Software Requirement:**
 
 ---
 
--   **[Git](https://git-scm.com/downloads)**
--   **[Github](https://github.com)**
--   **[Composer _2.7.*_](https://getcomposer.org/download/)**
--   **[NodeJS _20.15.*_](https://nodejs.org/en/download/current)**
--   **[PHP _8.3.*_](https://www.php.net/downloads.php)**
--   **(OPTIONAL) [Insomnia](https://docs.insomnia.rest/insomnia/install) or [Thunderclient(VScode Extension)](https://www.thunderclient.com/)**
+-   **[Code Management]: [Git](https://git-scm.com/downloads) and [GitHub](https://github.com)**
+-   **[PHP Environment]: [PHP _8.3.*_](https://www.php.net/downloads.php) and [Composer _2.7.*_](https://getcomposer.org/download/)**
+-   **[JS Environment]: [NodeJS _20.15.*_](https://nodejs.org/en/download/current)**
+-   **(ALTERNATIVE)->[PHP and JS (bundling) Environment]: [Laravel Herd (windows and mac only)](https://herd.laravel.com/docs/windows/1/getting-started/installation) or [Laragon(windows only)](https://laragon.org/download/)** 
+-   **(OPTIONAL)->[Backend Testing]: [Insomnia](https://docs.insomnia.rest/insomnia/install) or [Thunderclient(VScode Extension)](https://www.thunderclient.com/)**
 
 
 ### **🙇 Previous Team:**
@@ -48,7 +47,7 @@
 
 ---
 
-1. Open Address repository: [Repository GitHub](https://github.com/MuhammadKhairunnasNurdin/Laravel_PBL_Pro-Max)
+1. Open Address repository: [Repository GitHub](https://github.com/MuhammadKhairunnasNurdin/Laravel-11_PBL)
 
 2. Fork repository:
 
@@ -59,11 +58,11 @@
 3. Clone fork repository:
     - clone using HTTPS
     ```bash
-    git clone https://github.com/Your_Github_Username/Laravel_PBL_Pro-Max
+    git clone https://github.com/Your_Github_Username/Laravel-11_PBL
     ```
     - clone using SSH
     ```bash
-    git clone git@github.com:Your_Github_Username/Laravel-PBL_Pro-Max.git
+    git clone git@github.com:Your_Github_Username/Laravel-11_PBL
     ```
 
    note: change "Your_GitHub_Username" with your actual username, like: MuhammadKhairunnasNurdin
@@ -71,7 +70,7 @@
 4. Enter path folder repository:
 
     ```bash
-    cd Laravel_PBL_Pro-Max
+    cd Laravel-11_PBL
     ```
 
 5. Install dependency:
@@ -92,24 +91,31 @@
     ```bash
     php artisan key:generate
     ```
+   
+8. Fill DEFAULT_USER_PASSWORD in `.env` file with default password in your application:
 
-8. Create new Database `db_pbl_pro` (match the database name in the file `.env`) in phpmyadmin or terminal:
+    ```bash
+    DEFAULT_USER_PASSWORD=your_password
+    ```
+
+    note: change "your_password" with your actual default password
+
+9. Create new Database `laravel_11_pbl` (match the database name in the file `.env`) in phpmyadmin or terminal:
 
     ```bash
     mysql -u root -p
-    create database db_pbl_pro;
+    create database laravel_11_pbl;
     exit;
     ```
 
-9. Migrate and Seeding database:
+10. Migrate and Seeding database:
 
-    ```bash
-    php artisan migrate --seed
-    ```
+     ```bash
+     php artisan migrate --seed
+     ```
 
-10. run local server:
+11. run local server:
 
-    - run Laragon server: Click Start in Laragon UI
     - run Laravel Server:
      ```bash
      php artisan serve
@@ -119,7 +125,7 @@
      npm run dev
      ```
 
-11. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Laravel_PBL_Pro-Max` (for Laragon Server)
+12. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Laravel-11_PBL` (for Laragon Server)
 
 #### note: for steps 2-11 or any of steps that using bash or command syntax, you can do those bash syntax in your terminal or IDE-integrated terminal ####
 
@@ -129,7 +135,7 @@
 
 1. Sync Your Fork repository:
 
-   You can click in middle top right in Your GitHub repository: Laravel_PBL_Pro-Max
+   You can click in middle top right in Your GitHub repository: Laravel-11_PBL
 
 2. fetch change from your fork to local remote:
 
@@ -287,7 +293,7 @@
 
 9. Do Pull Request from your fork to main repository to discuss the change with your team:
     - Open your fork in your repository, if in there has notification to compare and pull request hit that button in there
-    - Create pull request from your fork to main repository related branch which your updated(like from frontend fork to frontend main)
+    - Create pull request from your fork to main repository related branch which your updated(like from frontend fork to frontend main repo)
 
 10. (Optional) if when pull had problem with "merge using **ort** strategy", like merge commit with no actual changes make your work tree dirty, do this:
     ```bash
@@ -302,7 +308,7 @@
 
 ---
 
--   If there are update change in your fork, always synced that, because you cannot push and crate pull request without that
+-   If there are update change in your fork, always synced that, because you cannot push and create pull request without that
 -   When Checkout, Push or Pull, always check your git branch is related to your Role
 -   Don't push to master with 'git push origin master' when add code change to GitHub
 -   Always create Pull request like steps 9
