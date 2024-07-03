@@ -3,7 +3,12 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enum\User\RoleEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Prunable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -12,7 +17,7 @@ use Illuminate\Notifications\Notifiable;
  */
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes, Prunable;
 
     /**
      * The attributes that are mass assignable.
@@ -20,9 +25,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'civilian_id',
+        'username',
         'email',
         'password',
+        'role',
+        'photo_profile'
     ];
 
     /**
@@ -46,5 +54,18 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Eloquent Model Relationships
+     */
+    public function civilian(): BelongsTo
+    {
+        return $this->belongsTo(Civilian::class)
+            ->whereBetween('date_of_birth',  [
+                now()->subYears(40)->format('Y-m-d'),
+                now()->subYears(20)->format('Y-m-d')
+            ]
+        );
     }
 }

@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Enum\User\RoleEnum;
+use App\Pipelines\QueryFilter\Civilian\BetweenAge;
+use App\Pipelines\QueryFilter\Helper\CivilianService;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -24,10 +27,17 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'civilian_id' => $this->faker->unique()->randomElement(
+                CivilianService::thenReturnStatic([
+                    BetweenAge::class . ':' . 40 . ',' . 20
+                ])
+                ->pluck('id')
+                ->toArray()
+            ),
+            'username' => $this->faker->unique()->userName(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'password' => static::$password ??= Hash::make(env('DEFAULT_USER_PASSWORD')),
+            'role' => $this->faker->randomElement(RoleEnum::getValuesWithout(RoleEnum::CHAIRMAN->value)),
             'remember_token' => Str::random(10),
         ];
     }
