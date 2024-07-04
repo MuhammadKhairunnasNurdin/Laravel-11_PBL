@@ -13,7 +13,7 @@
 ---
 
 - **[Backend]: [Laravel _11.13.*_](https://laravel.com/docs/11.x)**
-- **[Frontend]: [Laravel Blade](https://laravel.com/docs/11.x/blade#main-content), [Tailwind](https://tailwindcss.com/docs/installation) and [Flowbite](https://flowbite.com/docs/getting-started/laravel/)**
+- **[Frontend]: [Laravel Blade](https://laravel.com/docs/11.x/blade#main-content), [Tailwind](https://tailwindcss.com/docs/installation), [Flowbite](https://flowbite.com/docs/getting-started/laravel/), [Inertia-React](https://inertiajs.com/client-side-setup), [Typescript](https://www.typescriptlang.org/download/)**
 - **[Database]: [Mysql _8.0._](https://dev.mysql.com/doc/refman/8.0/en/)**
 - **(OPTIONAL)->[Containerization]: [DOCKER](https://docs.docker.com/desktop/)**
 
@@ -47,7 +47,8 @@
 
 ---
 
-- Muhammad Khairunnas Nurdin
+- [Muhammad Khairunnas Nurdin](https://github.com/MuhammadKhairunnasNurdin)
+- [Reza Arya Wijaya](https://github.com/chocomaltt)
 
 ---
 
