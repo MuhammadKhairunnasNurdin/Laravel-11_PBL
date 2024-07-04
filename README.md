@@ -6,6 +6,8 @@
 
 > The web-based Posyandu application is an application to learn more about the activities, benefits, and purposes as well as the importance of posyandu for citizens also provide many feature related employees posyandu to managing health and other checkup for citizens
 
+---
+
 ### **Tech Stack:**
 
 ---
@@ -15,6 +17,7 @@
 - **[Database]: [Mysql _8.0._](https://dev.mysql.com/doc/refman/8.0/en/)**
 - **(OPTIONAL)->[Containerization]: [DOCKER](https://docs.docker.com/desktop/)**
 
+---
 
 ### **Software Requirement:**
 
@@ -26,22 +29,27 @@
 -   **(ALTERNATIVE)->[PHP and JS (bundling) Environment]: [Laravel Herd (windows and mac only)](https://herd.laravel.com/docs/windows/1/getting-started/installation) or [Laragon(windows only)](https://laragon.org/download/)** 
 -   **(OPTIONAL)->[Backend Testing]: [Insomnia](https://docs.insomnia.rest/insomnia/install) or [Thunderclient(VScode Extension)](https://www.thunderclient.com/)**
 
+---
 
 ### **🙇 Previous Team:**
 
 ---
 
--   Aunurofiq Farhan Zuhdi
--   Lukman Eka Septiawan
--   Reza Arya Wijaya
--   Muhammad Rizky Fauzi<br>
+-   [Aunurofiq Farhan Zuhdi](https://github.com/Aunurrofiq08)
+-   [Lukman Eka Septiawan](https://github.com/Lukman289)
+-   [Reza Arya Wijaya](https://github.com/chocomaltt)
+-   [Muhammad Rizky Fauzi](https://github.com/rizkyyfaauzi21) <br>
     <b>Thanks for 4 people that help build this wonderfully website, from here We will upgrade that<b>
+    
+---
 
 ### **🙇 Current Team:**
 
 ---
 
 - Muhammad Khairunnas Nurdin
+
+---
 
 ### **🕙 Installation:**
 
@@ -128,6 +136,8 @@
 12. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Laravel-11_PBL` (for Laragon Server)
 
 #### note: for steps 2-11 or any of steps that using bash or command syntax, you can do those bash syntax in your terminal or IDE-integrated terminal ####
+
+---
 
 ### **🕙 Project Collaboration:**
 
@@ -303,6 +313,8 @@
      ```bash
      git config pull.rebase false
      ```
+
+---
 
 ### **🗒 Note :**
 
