@@ -3,13 +3,10 @@
 namespace Database\Seeders;
 
 use App\Enum\User\RoleEnum;
-use App\Models\Civilian;
 use App\Models\User;
 use App\Pipelines\QueryFilter\Civilian\BetweenAge;
 use App\Pipelines\QueryFilter\Helper\CivilianService;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Pipeline;
 
 class UserSeeder extends Seeder
 {
@@ -32,6 +29,7 @@ class UserSeeder extends Seeder
          */
         User::factory()->create([
             'role' => RoleEnum::CHAIRMAN->value,
+            'email' => 'anaschampion936@gmail.com'
         ]);
     }
 }
