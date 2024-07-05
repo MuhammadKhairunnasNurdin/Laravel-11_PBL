@@ -16,6 +16,11 @@ export default defineConfig({
         },
         watch: {
             usePolling: true
-        }
+        },
+        /**
+         * configure for multiple running vite port
+         * so we can run multiple laravel project with vite
+         * */
+        // port: 5174,
     },
 });
