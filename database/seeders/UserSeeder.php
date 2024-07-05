@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
          */
         User::factory()->create([
             'role' => RoleEnum::CHAIRMAN->value,
-            'email' => 'anaschampion936@gmail.com'
+            'email' => 'hello@example.com'
         ]);
     }
 }
