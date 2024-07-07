@@ -2,7 +2,7 @@
 
 ---
 
-<img src="https://github.com/MuhammadKhairunnasNurdin/Laravel-11_PBL/blob/master/public/img/logo_posyandu.png?raw=true" alt="Preview Image" width="500" height="350" style="display: block; margin: 0 auto;">
+<img src="https://github.com/MuhammadKhairunnasNurdin/Posyandu-Open-Source/blob/master/public/img/logo_posyandu.png?raw=true" alt="Preview Image" width="500" height="350" style="display: block; margin: 0 auto;">
 
 > The web-based Posyandu application is an application to learn more about the activities, benefits, and purposes as well as the importance of posyandu for citizens also provide many feature related employees posyandu to managing health and other checkup for citizens
 
@@ -38,8 +38,9 @@
 -   [Aunurofiq Farhan Zuhdi](https://github.com/Aunurrofiq08)
 -   [Lukman Eka Septiawan](https://github.com/Lukman289)
 -   [Reza Arya Wijaya](https://github.com/chocomaltt)
--   [Muhammad Rizky Fauzi](https://github.com/rizkyyfaauzi21) <br>
-    <b>Thanks for 4 people that help build this wonderfully website, from here We will upgrade that<b>
+-   [Muhammad Rizky Fauzi](https://github.com/rizkyyfaauzi21) 
+-   [Muhammad Khairunnas Nurdin](https://github.com/MuhammadKhairunnasNurdin) <br>
+    <b>Thanks for 5 people that help build this wonderfully website, from here We will upgrade that<b>
     
 ---
 
@@ -49,6 +50,21 @@
 
 - [Muhammad Khairunnas Nurdin](https://github.com/MuhammadKhairunnasNurdin)
 - [Reza Arya Wijaya](https://github.com/chocomaltt)
+- [Syahrul Bhudi F](https://github.com/SyahrulBhudiF)
+
+---
+
+### **Correlated Link:**
+
+---
+
+- [Discord](https://discord.gg/5gwvk8VQDf)
+- [Canva(Ui/Ux)](https://www.figma.com/design/lxTPB0HIUGkvvSie6Sextr/UI-Design-Project?node-id=3-57&t=PIYzGTbz4evB34vV-1)
+- [System Analyst](https://drive.google.com/drive/folders/1IxbhTHJC-0OcMrsX4aZNQxdAyQ6C37KH?usp=sharing)
+- [Database Analyst]()
+- [Document](https://drive.google.com/drive/folders/1XQfN_16ZWdfVdX4FVf4jRkkF30fJnI2-?usp=sharing)
+
+   Some link just had Read Only access, so you can't edit that, if you want to edit that, you can inbox me in github or discord
 
 ---
 
@@ -56,7 +72,7 @@
 
 ---
 
-1. Open Address repository: [Repository GitHub](https://github.com/MuhammadKhairunnasNurdin/Laravel-11_PBL)
+1. Open Address repository: [Repository GitHub](https://github.com/MuhammadKhairunnasNurdin/Posyandu-Open-Source)
 
 2. Fork repository:
 
@@ -67,11 +83,11 @@
 3. Clone fork repository:
     - clone using HTTPS
     ```bash
-    git clone https://github.com/Your_Github_Username/Laravel-11_PBL
+    git clone https://github.com/Your_Github_Username/Posyandu-Open-Source
     ```
     - clone using SSH
     ```bash
-    git clone git@github.com:Your_Github_Username/Laravel-11_PBL
+    git clone git@github.com:Your_Github_Username/Posyandu-Open-Source
     ```
 
    note: change "Your_GitHub_Username" with your actual username, like: MuhammadKhairunnasNurdin
@@ -79,7 +95,7 @@
 4. Enter path folder repository:
 
     ```bash
-    cd Laravel-11_PBL
+    cd Posyandu-Open-Source
     ```
 
 5. Install dependency:
@@ -101,7 +117,7 @@
     php artisan key:generate
     ```
    
-8. Fill DEFAULT_USER_PASSWORD in `.env` file with default password in your application:
+8. Fill DEFAULT_USER_PASSWORD in `.env` file with default password for User in application:
 
     ```bash
     DEFAULT_USER_PASSWORD=your_password
@@ -109,11 +125,11 @@
 
     note: change "your_password" with your actual default password
 
-9. Create new Database `laravel_11_pbl` (match the database name in the file `.env`) in phpmyadmin or terminal:
+9. Create new Database `posyandu_opsrc` (match the database name in the file `.env`) in phpmyadmin or terminal:
 
     ```bash
     mysql -u root -p
-    create database laravel_11_pbl;
+    create database posyandu_opsrc;
     exit;
     ```
 
@@ -134,7 +150,7 @@
      npm run dev
      ```
 
-12. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Laravel-11_PBL` (for Laragon Server)
+12. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Posyandu-Open-Source` (for Laragon Server)
 
 #### note: for steps 2-11 or any of steps that using bash or command syntax, you can do those bash syntax in your terminal or IDE-integrated terminal ####
 
@@ -146,7 +162,7 @@
 
 1. Sync Your Fork repository:
 
-   You can click in middle top right in Your GitHub repository: Laravel-11_PBL
+   You can click in middle top right in Your GitHub repository: Posyandu-Open-Source
 
 2. fetch change from your fork to local remote:
 
