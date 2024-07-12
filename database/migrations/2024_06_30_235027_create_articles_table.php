@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('title', 250);
+            $table->string('title', 100);
             $table->text('body');
             $table->string('excerpt', 200);
             $table->enum('tag', TagEnum::getValues());

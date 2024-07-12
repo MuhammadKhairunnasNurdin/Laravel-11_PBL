@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('medical_checkups', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('civilian_id')->constrained('civilians')->cascadeOnDelete();
             $table->date('checkup_date')->default(now());
             $table->enum('group', GroupEnum::getValues());
