@@ -16,11 +16,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('civilian_id')->index()->constrained('civilians');
             $table->string('username', 100)->unique();
-            $table->string('email')->unique();
+            $table->string('email', 255)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password', 100);
             $table->enum('role', RoleEnum::getValues());
-            $table->string('photo_profile')->nullable();
+            $table->string('photo_profile', 100)->nullable();
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

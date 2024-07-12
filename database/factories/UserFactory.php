@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Enum\User\RoleEnum;
 use App\Pipelines\QueryFilter\Civilian\BetweenAge;
-use App\Pipelines\QueryFilter\Helper\CivilianService;
+use App\Pipelines\QueryFilter\Helper\CivilianPipeline;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -28,7 +28,7 @@ class UserFactory extends Factory
     {
         return [
             'civilian_id' => $this->faker->unique()->randomElement(
-                CivilianService::thenReturnStatic([
+                CivilianPipeline::thenReturnStatic([
                     BetweenAge::class . ':' . 40 . ',' . 20
                 ])
                 ->pluck('id')

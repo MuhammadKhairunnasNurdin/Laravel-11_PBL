@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Enum\User\RoleEnum;
-use App\Pipelines\QueryFilter\Helper\UserService;
+use App\Pipelines\QueryFilter\Helper\UserPipeline;
 use App\Pipelines\QueryFilter\User\ByRole;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,7 +21,7 @@ class ActivityFactory extends Factory
     {
         return [
             'user_id' => $this->faker->randomElement(
-                UserService::thenReturnStatic([
+                UserPipeline::thenReturnStatic([
                     ByRole::class . ':' . RoleEnum::MEMBER->value,
                 ])
                 ->pluck('id')

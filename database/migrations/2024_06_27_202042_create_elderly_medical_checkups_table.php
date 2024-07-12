@@ -15,9 +15,9 @@ return new class extends Migration
             $table->foreignId('id')->primary()->constrained('medical_checkups');
             $table->decimal('stomach_perimeter', 6, 3);
             $table->decimal('gout', 5, 3);
-            $table->integer('blood_sugar');
-            $table->integer('blood_pressure');
-            $table->integer('cholesterol');
+            $table->smallInteger('blood_sugar');
+            $table->smallInteger('blood_pressure');
+            $table->smallInteger('cholesterol');
             $table->timestamps();
         });
     }

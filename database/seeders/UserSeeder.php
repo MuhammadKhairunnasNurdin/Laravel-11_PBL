@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Enum\User\RoleEnum;
 use App\Models\User;
 use App\Pipelines\QueryFilter\Civilian\BetweenAge;
-use App\Pipelines\QueryFilter\Helper\CivilianService;
+use App\Pipelines\QueryFilter\Helper\CivilianPipeline;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
          * random between kader or admin
          */
         User::factory()->count(
-            CivilianService::thenReturnStatic([
+            CivilianPipeline::thenReturnStatic([
                 BetweenAge::class . ':' . 40 . ',' . 20
             ])
             ->count() - 1

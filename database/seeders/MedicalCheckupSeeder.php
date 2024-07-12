@@ -7,7 +7,7 @@ use App\Models\BabyMedicalCheckup;
 use App\Models\ElderlyMedicalCheckup;
 use App\Models\MedicalCheckup;
 use App\Pipelines\QueryFilter\Civilian\ByAge;
-use App\Pipelines\QueryFilter\Helper\CivilianService;
+use App\Pipelines\QueryFilter\Helper\CivilianPipeline;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +21,7 @@ class MedicalCheckupSeeder extends Seeder
         /**
          * create a medicalCheckup record with corresponding babyMedicalCheckup record
          */
-        $babyCount = CivilianService::thenReturnStatic([
+        $babyCount = CivilianPipeline::thenReturnStatic([
             ByAge::class . ':>=,5'
         ])->count();
         for ($i = 0; $i < $babyCount; $i++) {
@@ -44,7 +44,7 @@ class MedicalCheckupSeeder extends Seeder
         /**
          * create a medicalCheckup record with corresponding babyMedicalCheckup record
          */
-        $elderlyCount = CivilianService::thenReturnStatic([
+        $elderlyCount = CivilianPipeline::thenReturnStatic([
             ByAge::class . ':<=,50'
         ])->count();
         for ($i = 0; $i < $elderlyCount; $i++) {

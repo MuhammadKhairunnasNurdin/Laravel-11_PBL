@@ -8,8 +8,8 @@ use App\Enum\User\RoleEnum;
 use App\Pipelines\QueryFilter\Civilian\BetweenAge;
 use App\Pipelines\QueryFilter\Civilian\ByAge;
 use App\Pipelines\QueryFilter\Civilian\ById;
-use App\Pipelines\QueryFilter\Helper\CivilianService;
-use App\Pipelines\QueryFilter\Helper\UserService;
+use App\Pipelines\QueryFilter\Helper\CivilianPipeline;
+use App\Pipelines\QueryFilter\Helper\UserPipeline;
 use App\Pipelines\QueryFilter\User\ByRole;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -26,7 +26,7 @@ class MedicalCheckupFactory extends Factory
     public function definition(): array
     {
         $id = $this->faker->randomElement(
-            CivilianService::thenReturnStatic([
+            CivilianPipeline::thenReturnStatic([
                 BetweenAge::class . ':' . 50 . ',' . 5
             ])
             ->pluck('id')
@@ -35,14 +35,14 @@ class MedicalCheckupFactory extends Factory
 
         return [
             'user_id' => $this->faker->randomElement(
-                UserService::thenReturnStatic([
+                UserPipeline::thenReturnStatic([
                     ByRole::class . ':' . RoleEnum::MEMBER->value,
                 ])
                 ->pluck('id')
                 ->toArray()),
             'civilian_id' => $id,
             'checkup_date' => $this->faker->dateTimeBetween('-1 years')->format('Y-m-d'),
-            'group' => CivilianService::thenReturnStatic([
+            'group' => CivilianPipeline::thenReturnStatic([
                 ById::class . ":$id",
                 ByAge::class . ":<=,50",
             ])->get()->isNotEmpty() ? GroupEnum::ELDERLY->value : GroupEnum::BABY->value,
@@ -57,10 +57,10 @@ class MedicalCheckupFactory extends Factory
      */
     public function elderly(): self
     {
-        return $this->state(function (array $attributes) {
+        return $this->state(function () {
             return [
                 'civilian_id' => $this->faker->randomElement(
-                    CivilianService::thenReturnStatic([
+                    CivilianPipeline::thenReturnStatic([
                         ByAge::class . ':<=,50',
                     ])
                     ->pluck('id')
@@ -72,10 +72,10 @@ class MedicalCheckupFactory extends Factory
     }
     public function baby(): self
     {
-        return $this->state(function (array $attributes) {
+        return $this->state(function () {
             return [
                 'civilian_id' => $this->faker->randomElement(
-                    CivilianService::thenReturnStatic([
+                    CivilianPipeline::thenReturnStatic([
                         ByAge::class . ':>=,5',
                     ])
                     ->pluck('id')

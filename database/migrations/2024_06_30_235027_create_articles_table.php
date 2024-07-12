@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('body');
             $table->string('excerpt', 200);
             $table->enum('tag', TagEnum::getValues());
-            $table->string('photo_article')->nullable();
+            $table->string('photo_article', 100)->nullable();
             $table->timestamps();
         });
     }
