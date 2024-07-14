@@ -64,7 +64,7 @@
 - [Database Analyst]()
 - [Document](https://drive.google.com/drive/folders/1XQfN_16ZWdfVdX4FVf4jRkkF30fJnI2-?usp=sharing)
 
-   Some link just had Read Only access, so you can't edit that, if you want to edit that, you can inbox me in github or discord
+   Some link just had Read Only access, so you can't edit that, if you want to edit that, you can inbox me in GitHub or discord
 
 ---
 
@@ -125,21 +125,23 @@
 
     note: change "your_password" with your actual default password
 
-9. Create new Database `posyandu_opsrc` (match the database name in the file `.env`) in phpmyadmin or terminal:
+9. If you use docker, don't do below step, go to [DOCKER SETUP(OPTIONAL)](#-docker-setupoptional) section
 
-    ```bash
-    mysql -u root -p
-    create database posyandu_opsrc;
-    exit;
-    ```
+10. Create new Database `posyandu_opsrc` (match the database name in the file `.env`) in phpmyadmin or terminal:
 
-10. Migrate and Seeding database:
+     ```bash
+     mysql -u root -p
+     create database posyandu_opsrc;
+     exit;
+     ```
+
+11. Migrate and Seeding database:
 
      ```bash
      php artisan migrate --seed
      ```
 
-11. run local server:
+12. run local server:
 
     - run Laravel Server:
      ```bash
@@ -150,9 +152,92 @@
      npm run dev
      ```
 
-12. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Posyandu-Open-Source` (for Laragon Server)
+13. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Posyandu-Open-Source` (for Laragon Server)
 
 #### note: for steps 2-11 or any of steps that using bash or command syntax, you can do those bash syntax in your terminal or IDE-integrated terminal ####
+
+---
+
+### **🕙 DOCKER SETUP(OPTIONAL):**
+
+---
+
+1. Change your .env: 
+    -  DB_HOST to `mysql`
+    -  DB_PASSWORD to `password`
+    -  You can change DB_USERNAME up to you 
+    -  If you encounter port issue, change port below that not used in your machine:
+        1. Uncomment and change `APP_PORT` to value with prefix '8', like 81, 82, etc
+        2. change `APP_URL` like `http://localhost:81` with '81' is your `APP_PORT` value  
+        3. Uncomment and change `FORWARD_DB_PORT` to value with prefix '330', like 3307, 3308, etc
+        4. Uncomment and change `VITE_PORT` to value with prefix '517', like 5174, 5175, etc
+        5. If your mailpit port is used, do this:
+            1. change `FORWARD_MAILPIT_PORT` to value with prefix '102', like 1026, 1027, etc
+            2. change `FORWARD_MAILPIT_DASHOARD_PORT` to value with prefix '802', like 8026, 8027, etc
+
+2. Run container:
+    ```bash
+   ./vendor/bin/sail up -d
+   ``` 
+   you can create alias in your terminal for sail command:
+    -  open bashrc file:
+       ```bash
+       nano ~/.bashrc
+       ```
+    -  add this line in the end of file:
+       ```bash
+       alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+       ```
+    -  click ctrl + x, then type y and enter
+    -  you can do run container with alias like this: 
+       ```bash
+       sail up -d
+       ```
+3. If you use linux, change permission for project file:
+    -  open terminal and type:
+       ```bash
+        sail root-shell
+       ```
+    -  in root shell terminal, type:
+       ```bash
+       cd ..
+       chown -R root:sail html
+       chmod -R 775 html
+       exit
+       ```
+
+4. Migrate and Seeding database:
+    ```bash
+    sail artisan migrate --seed
+    ```
+    all database related command like migrate, seed, etc. You can add 'sail artisan' prefix before that command
+
+5. run npm dev:
+    ```bash
+    sail npm run dev
+    ```
+    all npm related command like install, run dev, etc. You can add 'sail npm' prefix before that command
+
+6. Open browser and Access your APP_URL like `http://localhost` (for default url) or `http://localhost:81`, `http://localhost:82`, etc. (for APP_PORT changed)
+
+7. After you finish your work and start your work again, use this commands:
+   -  for stop container:
+      ```bash
+      sail down
+      ```
+   -  if you use `sail down` will stop and remove your container, this command will remove your database data, so use this command carefully  
+   -  for start container:
+      ```bash
+      sail start
+      ```
+   -  if you use `sail up -d` will start from scratch and will remove your database data, so use this command carefully 
+
+8. If you change your .env file, moreover port, you can do this command:
+   ```bash
+   sail down 
+   sail up -d
+   ```
+   and do it again step 3 up to 7, this will refresh your container with new .env port 
 
 ---
 
