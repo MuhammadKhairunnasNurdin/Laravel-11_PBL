@@ -2,15 +2,15 @@
 
 namespace App\Pipelines\QueryFilter\Helper;
 
-use App\Models\User;
+use App\Models\Civilian;
 use Illuminate\Database\Eloquent\Builder;
 
-class UserService extends PipelineAbstract
+class CivilianPipeline extends PipelineAbstract
 {
 
     public function thenReturn(array $filters, Builder $query = null): Builder
     {
-        $query = $query ?? User::query();
+        $query = $query ?? Civilian::query();
         return $this->pipeline
             ->send($query)
             ->through($filters)
