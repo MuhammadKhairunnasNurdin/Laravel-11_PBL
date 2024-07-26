@@ -2,7 +2,7 @@
 
 ---
 
-<img src="https://github.com/MuhammadKhairunnasNurdin/Posyandu-Open-Source/blob/master/public/img/logo_posyandu.png?raw=true" alt="Preview Image" width="500" height="350" style="display: block; margin: 0 auto;">
+<img src="https://github.com/MuhammadKhairunnasNurdin/Laravel-11_PBL/blob/master/public/img/logo_posyandu.png?raw=true" alt="Preview Image" width="500" height="350" style="display: block; margin: 0 auto;">
 
 > The web-based Posyandu application is an application to learn more about the activities, benefits, and purposes as well as the importance of posyandu for citizens also provide many feature related employees posyandu to managing health and other checkup for citizens
 
@@ -72,7 +72,7 @@
 
 ---
 
-1. Open Address repository: [Repository GitHub](https://github.com/MuhammadKhairunnasNurdin/Posyandu-Open-Source)
+1. Open Address repository: [Repository GitHub](https://github.com/MuhammadKhairunnasNurdin/Posyandu_Open-Source)
 
 2. Fork repository:
 
@@ -83,11 +83,11 @@
 3. Clone fork repository:
     - clone using HTTPS
     ```bash
-    git clone https://github.com/Your_Github_Username/Posyandu-Open-Source
+    git clone https://github.com/Your_Github_Username/Posyandu_Open-Source
     ```
     - clone using SSH
     ```bash
-    git clone git@github.com:Your_Github_Username/Posyandu-Open-Source
+    git clone git@github.com:Your_Github_Username/Posyandu_Open-Source
     ```
 
    note: change "Your_GitHub_Username" with your actual username, like: MuhammadKhairunnasNurdin
@@ -95,7 +95,7 @@
 4. Enter path folder repository:
 
     ```bash
-    cd Posyandu-Open-Source
+    cd Posyandu_Open-Source
     ```
 
 5. Install dependency:
@@ -152,7 +152,7 @@
      npm run dev
      ```
 
-13. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Posyandu-Open-Source` (for Laragon Server)
+13. Open browser and Access Localhost `http://localhost:8000` (for Laravel Server) or `http://localhost/www/Posyandu_Open-Source` (for Laragon Server)
 
 #### note: for steps 2-11 or any of steps that using bash or command syntax, you can do those bash syntax in your terminal or IDE-integrated terminal ####
 
@@ -247,7 +247,7 @@
 
 1. Sync Your Fork repository:
 
-   You can click in middle top right in Your GitHub repository: Posyandu-Open-Source
+   You can click in middle top right in Your GitHub repository: Posyandu_Open-Source
 
 2. fetch change from your fork to local remote:
 
